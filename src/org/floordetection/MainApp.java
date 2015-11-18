@@ -109,7 +109,7 @@ public class MainApp
 				
 				if(!webcamMatImage.empty())
 				{
-					Mat matblurredImage = imageProcessor.blur(webcamMatImage, 100);
+					Mat matblurredImage = imageProcessor.blur(webcamMatImage, 1);
 					mask.create(new Size(webcamMatImage.cols()+2, webcamMatImage.rows()+2), CvType.CV_8UC1);
 					
 					mask.setTo(new Scalar(0));
