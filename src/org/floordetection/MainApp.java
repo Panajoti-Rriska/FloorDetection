@@ -94,7 +94,7 @@ public class MainApp
 		Image tempImage;
 		Image tempImage2;
 		//VideoCapture capture = new VideoCapture(0);
-		VideoCapture capture = new VideoCapture("videos/Floor2.mp4");
+		VideoCapture capture = new VideoCapture("videos/floor3.mp4");
 		
 		capture.set(Videoio.CAP_PROP_FRAME_WIDTH,500);
 		capture.set(Videoio.CAP_PROP_FRAME_HEIGHT,300);
@@ -120,11 +120,11 @@ public class MainApp
 					floodFill.setConnectivity(8);
 					
 					//Lower and Higher difference of pixels 
-					floodFill.setLowerDiff(37);
+					floodFill.setLowerDiff(90);
 					floodFill.setUpperDiff(100);
 					
 					//Here you point the coordinates x y of the pixel to get populated
-					floodFill.fill(matblurredImage, mask, 500, 1200);
+					floodFill.fill(matblurredImage, mask, webcamMatImage.width()*5/8, webcamMatImage.height()*5/8);
 					
 					tempImage= imageProcessor.toBufferedImage(matblurredImage);
 					tempImage2 = imageProcessor.toBufferedImage(webcamMatImage);

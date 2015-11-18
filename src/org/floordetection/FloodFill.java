@@ -36,9 +36,9 @@ public class FloodFill
 	{
 		Point seedPoint = new Point(x,y);
 		
-		int b = random.nextInt(256);
-	    int g = random.nextInt(256);
-	    int r = random.nextInt(256);
+		int b = 0;//random.nextInt(256);
+	    int g = 128;//random.nextInt(256);
+	    int r = 0;//random.nextInt(256);
 	    Rect rect = new Rect();
 
 	    Scalar newVal = isColored() ? new Scalar(b, g, r) : new Scalar(r*0.299 + g*0.587 + b*0.114);
