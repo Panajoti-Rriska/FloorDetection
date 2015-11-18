@@ -93,8 +93,8 @@ public class MainApp
 			    
 		Image tempImage;
 		Image tempImage2;
-		//VideoCapture capture = new VideoCapture(0);
-		VideoCapture capture = new VideoCapture("videos/floor3.mp4");
+		VideoCapture capture = new VideoCapture(0);
+		//VideoCapture capture = new VideoCapture("videos/floor3.mp4");
 		
 		capture.set(Videoio.CAP_PROP_FRAME_WIDTH,500);
 		capture.set(Videoio.CAP_PROP_FRAME_HEIGHT,300);
@@ -155,8 +155,8 @@ public class MainApp
 	
 	protected void startCamera(ActionEvent event)
 	{	
-		ImageViewer imageProcessor = new ImageViewer();
-		Mat webcamMatImage = new Mat();
+		final ImageViewer imageProcessor = new ImageViewer();
+		final Mat webcamMatImage = new Mat();
 		//VideoCapture capture = new VideoCapture(0);
 		VideoCapture capture = new VideoCapture("videos/floor1.mp4");
 
