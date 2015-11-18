@@ -69,7 +69,7 @@ public class MainApp
 	   // imageLabel1.setBorder(BorderFactory.createLineBorder(Color.black));
 	    //imageLabel2.setBorder(BorderFactory.createLineBorder(Color.black));
 
-	    JFrame frame = new JFrame("AlignmentExample");
+	    JFrame frame = new JFrame("Floor Detection 0.1");
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    JPanel p = new JPanel(new GridLayout(1, 1, 1, 1));
 	    p.add(imageLabel1);
@@ -90,9 +90,7 @@ public class MainApp
 
 	    Mat mask = new Mat();
 
-		
-	    
-	    
+			    
 		Image tempImage;
 		Image tempImage2;
 		//VideoCapture capture = new VideoCapture(0);
@@ -115,6 +113,15 @@ public class MainApp
 					mask.create(new Size(webcamMatImage.cols()+2, webcamMatImage.rows()+2), CvType.CV_8UC1);
 					
 					mask.setTo(new Scalar(0));
+					//Setting range method for fill flood
+					floodFill.setRange(FloodFill.FIXED_RANGE);
+					
+					//Connectivity setting for 8 neighbour pixels
+					floodFill.setConnectivity(8);
+					
+					//Lower and Higher difference of pixels 
+					floodFill.setLowerDiff(37);
+					floodFill.setUpperDiff(100);
 					
 					//Here you point the coordinates x y of the pixel to get populated
 					floodFill.fill(matblurredImage, mask, 500, 1200);
